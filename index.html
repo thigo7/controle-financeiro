@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gestão Financeira</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.autor {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.mes-box {
+    width: 800px;
+    margin: auto;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.mes-box input {
+    background: black;
+    color: lime;
+    border: none;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+table {
+    width: 800px;
+    background: #6c7a89;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.azul { background: #2a5298; }
+.laranja { background: orange; color: black; }
+.sub { background: #444; }
+
+.total {
+    background: black;
+    color: red;
+}
+
+input {
+    width: 95%;
+    padding: 5px;
+    border: none;
+}
+
+canvas {
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="autor">Desenvolvido por Thiago Freitas</div>
+
+<div class="container">
+
+<div class="titulo">Gestão Financeira Pessoal</div>
+
+<div class="mes-box">
+    Mês: <input id="mes" value="ABRIL">
+</div>
+
+<table>
+
+<tr class="azul"><th colspan="4">RECEITAS</th></tr>
+
+<tr>
+<td><input placeholder="Fonte"></td>
+<td><input placeholder="Nome"></td>
+<td><input class="receita"></td>
+<td rowspan="3">R$ <span id="totalReceita">0</span></td>
+</tr>
+
+<tr><td><input></td><td><input></td><td><input class="receita"></td></tr>
+<tr><td><input></td><td><input></td><td><input class="receita"></td></tr>
+
+<tr class="laranja"><th colspan="4">DESPESAS</th></tr>
+
+<tr>
+<th>Descrição</th>
+<th>Valor</th>
+<th>Vencimento</th>
+<th>Situação</th>
+</tr>
+
+<tr class="sub"><th colspan="4">FIXO</th></tr>
+<tbody id="fixo"></tbody>
+
+<tr class="sub"><th colspan="4">VARIÁVEL</th></tr>
+<tbody id="variavel"></tbody>
+
+<tr class="total">
+<td colspan="3">TOTAL</td>
+<td>R$ <span id="gastos">0</span></td>
+</tr>
+
+<tr class="total">
+<td colspan="3">SALDO</td>
+<td>R$ <span id="saldo">0</span></td>
+</tr>
+
+</table>
+
+<canvas id="grafico" width="400" height="200"></canvas>
+
+</div>
+
+<script>
+
+function salvar() {
+    localStorage.setItem("dados", JSON.stringify({
+        valores: [...document.querySelectorAll("input")].map(i => i.value)
+    }));
+}
+
+function carregar() {
+    let dados = JSON.parse(localStorage.getItem("dados"));
+    if (dados) {
+        document.querySelectorAll("input").forEach((i, idx) => {
+            i.value = dados.valores[idx] || "";
+        });
+    }
+}
+
+function criar(id, qtd) {
+    let t = document.getElementById(id);
+    for (let i = 0; i < qtd; i++) {
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td><input></td>
+        <td><input class="gasto"></td>
+        <td><input></td>
+        <td><input></td>`;
+        t.appendChild(tr);
+    }
+}
+
+// 🔥 AQUI FOI AJUSTADO
+criar("fixo", 6);
+criar("variavel", 6);
+
+let chart;
+
+function calcular() {
+    let receita = 0;
+    document.querySelectorAll(".receita").forEach(i => {
+        receita += parseFloat(i.value) || 0;
+    });
+
+    let gasto = 0;
+    document.querySelectorAll(".gasto").forEach(i => {
+        gasto += parseFloat(i.value) || 0;
+    });
+
+    document.getElementById("totalReceita").textContent = receita.toFixed(2);
+    document.getElementById("gastos").textContent = gasto.toFixed(2);
+    document.getElementById("saldo").textContent = (receita - gasto).toFixed(2);
+
+    atualizarGrafico(receita, gasto);
+    salvar();
+}
+
+function atualizarGrafico(receita, gasto) {
+    let ctx = document.getElementById("grafico");
+
+    if (chart) chart.destroy();
+
+    chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Receitas', 'Gastos'],
+            datasets: [{
+                data: [receita, gasto]
+            }]
+        }
+    });
+}
+
+document.addEventListener("input", calcular);
+
+carregar();
+calcular();
+
+</script>
+
+</body>
+</html>
