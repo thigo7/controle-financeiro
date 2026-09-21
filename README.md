@@ -1,35 +1,44 @@
-# 👋 Olá, eu sou o Thiago
+# 💰 Controle Financeiro Pessoal
 
-💻 Desenvolvedor em formação focado em Front-end e Dados  
-📊 Criando soluções reais com JavaScript, HTML e CSS  
-🚀 Em constante evolução na área de tecnologia  
+Sistema web desenvolvido para auxiliar no controle de receitas, despesas e saldo financeiro pessoal.
 
----
+## 🌐 Acesse o sistema
 
-## 🚀 Projeto em destaque
+👉 [**Abrir o Controle Financeiro**](https://thigo7.github.io/controle-financeiro/)
 
-💰 **Controle Financeiro Pessoal**  
-Sistema completo para gestão de receitas e despesas
+## ✨ Funcionalidades
 
-🔗 Acesse:  
-https://thigo7.github.io/controle-financeiro/
+- 💰 Cadastro e controle de receitas
+- 💸 Cadastro e organização de despesas
+- 📅 Controle financeiro por mês
+- 🧮 Cálculo automático do saldo
+- 📊 Acompanhamento da situação financeira
+- 💵 Formatação de valores em reais (R$)
+- 🌐 Funcionamento diretamente pelo navegador
 
----
+## 🛠️ Tecnologias utilizadas
 
-## 🛠️ Tecnologias
+- HTML5
+- CSS3
+- JavaScript
+- GitHub Pages
 
-- HTML  
-- CSS  
-- JavaScript  
+## 🎯 Objetivo
 
----
+O projeto tem como objetivo desenvolver uma aplicação web simples e prática para auxiliar na organização das finanças pessoais.
 
-## 📈 Objetivo
+Além de sua finalidade prática, o projeto também permite aplicar conhecimentos de desenvolvimento web utilizando HTML, CSS e JavaScript.
 
-Buscando oportunidade de estágio para crescer na área de tecnologia e desenvolvimento.
+## 💾 Armazenamento
 
----
+Os dados são armazenados localmente no navegador do usuário, permitindo que o sistema funcione individualmente em cada dispositivo.
 
-## 📫 Contato
+## 📱 Acesso
 
-- GitHub: https://github.com/thigo7
+O sistema pode ser utilizado diretamente pelo navegador, sem necessidade de instalação.
+
+## 👨‍💻 Desenvolvedor
+
+**Thiago Freitas**
+
+[GitHub @thigo7](https://github.com/thigo7)
