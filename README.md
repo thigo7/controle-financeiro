@@ -40,3 +40,20 @@ controle-financeiro/
 ├── index.html
 └── README.md
 
+## 🔒 Armazenamento dos dados
+
+Os dados da aplicação são armazenados localmente no navegador por meio do `localStorage`.
+
+A aplicação funciona de forma local no dispositivo e não envia os dados financeiros para um servidor externo.
+
+## 🎓 Projeto acadêmico
+
+Projeto desenvolvido como parte das atividades acadêmicas do curso de Tecnólogo em Banco de Dados.
+
+O projeto também representa uma aplicação prática dos conhecimentos adquiridos em desenvolvimento web, organização de dados e programação.
+
+## 👨‍💻 Desenvolvedor
+
+**Thiago Freitas**
+
+🔗 GitHub: [https://github.com/thigo7](https://github.com/thigo7)
