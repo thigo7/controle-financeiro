@@ -1,44 +1,42 @@
 # 💰 Controle Financeiro Pessoal
 
-Sistema web desenvolvido para auxiliar no controle de receitas, despesas e saldo financeiro pessoal.
+Aplicação web para gerenciamento e organização das finanças pessoais, desenvolvida com HTML, CSS e JavaScript.
 
-## 🌐 Acesse o sistema
+O sistema permite registrar receitas e despesas, acompanhar o saldo mensal e visualizar um resumo financeiro anual.
 
-👉 [**Abrir o Controle Financeiro**](https://thigo7.github.io/controle-financeiro/)
+## 🌐 Acesse o projeto
 
-## ✨ Funcionalidades
+🔗 https://thigo7.github.io/controle-financeiro/
 
-- 💰 Cadastro e controle de receitas
-- 💸 Cadastro e organização de despesas
-- 📅 Controle financeiro por mês
-- 🧮 Cálculo automático do saldo
-- 📊 Acompanhamento da situação financeira
-- 💵 Formatação de valores em reais (R$)
-- 🌐 Funcionamento diretamente pelo navegador
+## 📋 Funcionalidades
+
+- 💰 Cadastro de receitas
+- 💸 Cadastro de despesas
+- 📌 Controle de despesas fixas e variáveis
+- 📊 Cálculo automático do saldo
+- 📅 Organização por mês
+- 📈 Resumo financeiro anual
+- 📤 Exportação dos dados
+- 📥 Importação dos dados
+- 💾 Armazenamento local dos dados
+- 📱 Interface responsiva
 
 ## 🛠️ Tecnologias utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
+- LocalStorage
 - GitHub Pages
 
-## 🎯 Objetivo
+## 📁 Estrutura do projeto
 
-O projeto tem como objetivo desenvolver uma aplicação web simples e prática para auxiliar na organização das finanças pessoais.
+```text
+controle-financeiro/
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── index.html
+└── README.md
 
-Além de sua finalidade prática, o projeto também permite aplicar conhecimentos de desenvolvimento web utilizando HTML, CSS e JavaScript.
-
-## 💾 Armazenamento
-
-Os dados são armazenados localmente no navegador do usuário, permitindo que o sistema funcione individualmente em cada dispositivo.
-
-## 📱 Acesso
-
-O sistema pode ser utilizado diretamente pelo navegador, sem necessidade de instalação.
-
-## 👨‍💻 Desenvolvedor
-
-**Thiago Freitas**
-
-[GitHub @thigo7](https://github.com/thigo7)
